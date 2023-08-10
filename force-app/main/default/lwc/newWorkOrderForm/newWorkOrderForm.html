@@ -1,0 +1,34 @@
+<template>
+    <template lwc:if={showSpinner}>
+        <c-show-spinner-comp></c-show-spinner-comp>
+    </template>
+    <template lwc:else>
+        <div>NEW WORKING ORDER</div>
+        <div>
+            <lightning-record-edit-form
+                object-api-name={strobjectApiName}
+                onsubmit={handleSubmit}
+                onsuccess={handleSuccess}
+                >
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows>
+                    <!--this must be in for loop with fieldset-->
+                    <template lwc:if={fieldSet} for:each={fieldSet} for:item="itm">
+                        <lightning-layout-item key={itm} size="6" padding="around-small">
+                            {itm}
+                            <lightning-input-field class={itm} field-name={itm}> </lightning-input-field>
+                            
+                        </lightning-layout-item>
+                    </template>           
+                </lightning-layout>
+                <lightning-button variant="success" label="Save" title="Save" type="submit"></lightning-button>
+                <lightning-button variant="brand" label="Cancel" title="Cancel" onclick={handleReset}></lightning-button>
+    
+            </lightning-record-edit-form>
+          </div>
+    </template>
+    
+    
+      
+      
+</template>
