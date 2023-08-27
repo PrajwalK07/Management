@@ -13,10 +13,19 @@ public class Hello {
         System.out.println("Enter value of b ");
         int b = sc.nextInt();
         System.out.println("Before swap value of a " + a + "value of b " + b);
-        swappingOne(a, b);// using third variable
-        swappingTwo(a, b);//without using third variable addition subtraction
-        swappingThree(a, b);//without using third variable mul/div
+        //swappingOne(a, b);// using third variable
+        //swappingTwo(a, b);//without using third variable addition subtraction
+        //swappingThree(a, b);//without using third variable mul/div
         /*===Day 1 :26-Aug end========*/
+
+
+        /*===Day 2 :27-Aug Start========
+         * link : https://www.youtube.com/watch?v=m0lMpNIG6vU&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=2
+        */
+        System.out.println("Algo Reverse of the number is " + reverseNumberAlgo(1020));
+        reverseNumberStrBuffer(201);
+        reverseNumberStrBuilder(201);
+        /*===Day 2 :27-Aug end========*/
     }
 
     public static void swappingOne(int a, int b) {
@@ -26,16 +35,42 @@ public class Hello {
         b = c;
         System.out.println("After swap value of a " + a + " value of b " + b);
     }
+
     public static void swappingTwo(int a, int b) {
-        a = a+b;
-        b= a-b;
-        a=a-b;
+        a = a + b;
+        b = a - b;
+        a = a - b;
         System.out.println("without third::add/sub After swap value of a " + a + " value of b " + b);
     }
+
     public static void swappingThree(int a, int b) {
-        a=a*b;
-        b=a/b;
-        a=a/b;
+        a = a * b;
+        b = a / b;
+        a = a / b;
         System.out.println("without third::mul/div After swap value of a " + a + " value of b " + b);
+    }
+
+    public static int reverseNumberAlgo(int num) {
+        int rev = 0;
+        while (num != 0) {
+            System.out.println("inside while");
+            rev = (rev * 10) + (num % 10);
+            num = num / 10;
+
+        }
+
+        return rev;
+    }
+
+    public static void reverseNumberStrBuffer(int num){
+        StringBuffer rev;
+        StringBuffer sb = new StringBuffer(String.valueOf(num));
+        rev = sb.reverse();
+        System.out.println("reverse of number using SB ==> " +rev) ;
+    }
+    public static void reverseNumberStrBuilder(int num){
+        StringBuilder sb = new StringBuilder();
+        sb.append(num);
+        System.out.println("Using Builder" + sb.reverse()); 
     }
 }
