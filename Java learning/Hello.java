@@ -21,10 +21,15 @@ public class Hello {
 
         /*===Day 2 :27-Aug Start========
          * link : https://www.youtube.com/watch?v=m0lMpNIG6vU&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=2
+         * 
         */
         System.out.println("Algo Reverse of the number is " + reverseNumberAlgo(1020));
         reverseNumberStrBuffer(201);
         reverseNumberStrBuilder(201);
+        //2reverse string 
+        reverseStrAlgoString("ABCV"); // String
+        reverseStrAlgoCharArr("ABCV"); // char array
+        reverseStrBuf("ABCD");
         /*===Day 2 :27-Aug end========*/
     }
 
@@ -72,5 +77,24 @@ public class Hello {
         StringBuilder sb = new StringBuilder();
         sb.append(num);
         System.out.println("Using Builder" + sb.reverse()); 
+    }
+    public static void reverseStrAlgoString(String str){
+        String reverseStr = "";
+        for(int i=str.length()-1 ; i >=0 ;i --){//here we have length() on string
+            reverseStr = reverseStr + str.charAt(i);
+        }
+        System.out.println("String rev -> " +reverseStr);
+    }
+    public static void reverseStrAlgoCharArr(String str){
+        char a[] = str.toCharArray();
+        String rev ="";
+        for(int i= a.length -1  ; i>=0 ;i--){// char array par length not () function
+            rev = rev + a[i];
+        }
+        System.out.println("Reverse using string char array --> " + rev);
+    }
+    public static void reverseStrBuf(String str){
+        StringBuffer sb = new StringBuffer(str);
+        System.out.println("reverse using string buffer--> " + sb.reverse());
     }
 }
