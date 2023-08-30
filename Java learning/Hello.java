@@ -51,7 +51,27 @@ public class Hello {
              System.out.println("no palindrome");
         }
         /*===Day 3 :27-Aug end========*/
-
+        /*===Day 4 :29-Aug Start========
+         * link : https://www.youtube.com/watch?v=CnFBzBMEdMg&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=6
+         * 
+        */
+        //System.out.println("No of digits = > " + noOfDigitsNumber(109));
+        
+        /*Day 4 end */
+        /*===Day 5 :29-Aug Start========
+            link : Count of even odd digits in number-> https://www.youtube.com/watch?v=Ns4LoG56SZ4&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=7
+            link : Sum of digits in number -> https://www.youtube.com/watch?v=ZLaBlxnmrxc&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=8
+        */
+        noOfEvennOddDigits(10245);
+        System.out.println("Sun of digits - > "+ sumOfDigits(12345));
+        if(primeNumber(11)){
+            System.out.println("Prime number");
+        }else{
+            System.out.println("not prime");
+        }
+        
+        /*day 5 end  */
+        
     }
 
     public static void swappingOne(int a, int b) {
@@ -144,4 +164,54 @@ public class Hello {
         }
         return false;
     }
+    public static int noOfDigitsNumber(int num){
+        int countDigit = 0;
+        while(num!=0){
+            countDigit ++ ;
+            num = num /10;
+        }
+        return countDigit;
+    }
+    public static void noOfEvennOddDigits(int num){
+        int evenDigits = 0;
+        int oddDigits = 0 ;
+        while(num!=0){
+            if(num % 2 == 0){
+                evenDigits++;
+            }else{
+                oddDigits++;
+            }
+            num=num/10;
+        }
+        System.out.println("Even Digiits=>"+evenDigits);
+        System.out.println("Odd Digiits=>"+oddDigits);
+    }
+    public static int sumOfDigits(int num){
+        int digSum = 0;
+        while(num!=0){
+            digSum = digSum + num%10;
+            num=num/10;
+
+        }
+        return digSum;
+    }
+    public static int largetAmoungThree1(){
+        int largest=0; 
+        return largest;
+    }
+    public static boolean primeNumber(int num){
+        int pc = 0;
+        boolean prime = true;
+        for(int i=1;i<=num;i++){
+            if(num%i==0){
+                pc++;
+            }
+            if(pc>2){
+                prime = false;
+                break;
+            }
+        }
+        return prime;
+    } 
+    
 }
