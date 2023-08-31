@@ -58,7 +58,7 @@ public class Hello {
         //System.out.println("No of digits = > " + noOfDigitsNumber(109));
         
         /*Day 4 end */
-        /*===Day 5 :29-Aug Start========
+        /*===Day 5 :30--Aug Start========
             link : Count of even odd digits in number-> https://www.youtube.com/watch?v=Ns4LoG56SZ4&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=7
             link : Sum of digits in number -> https://www.youtube.com/watch?v=ZLaBlxnmrxc&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=8
         */
@@ -71,6 +71,28 @@ public class Hello {
         }
         
         /*day 5 end  */
+
+        /*===Day 6 :31--Aug Start========
+            link : Factorial of a number : https://www.youtube.com/watch?v=ZLaBlxnmrxc&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=8
+            link : Sum of elements in an aarray -> https://www.youtube.com/watch?v=BDvYp3GbfU4&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=15
+            link : Print even aand odd number from an ayyay : https://www.youtube.com/watch?v=e3x0bnOrcAA&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=15
+            link : MAx and min value in am array : https://www.youtube.com/watch?v=Jrr0bNcPFgo&list=PLUDwpEzHYYLtgkXK6YaZ4I2XcsjMqIaEa&index=18
+        */
+        //System.out.println("Factorial is--> "+ factorialOfNum(5));
+        Scanner s = new Scanner(System.in);
+        System.out.println("enter number of elements ->");
+        int n=s.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){//for reading array
+            arr[i]=s.nextInt();
+
+        }
+        //System.out.println("Some of elemnts of array is -> " + sumOfEleOfArray(arr));
+        //noOfEventOddInArray(arr);
+        maxAndMinElementArray(arr);
+        
+        /*day 6 end  */
+
         
     }
 
@@ -213,5 +235,51 @@ public class Hello {
         }
         return prime;
     } 
+    public static int factorialOfNum(int num){
+        int fact =1;
+        for(int i=1;i<=num;i++){
+            fact = fact*i;
+        }
+        return fact;
+    }
+    public static int sumOfEleOfArray(int[] arr){
+        int sum =0 ;
+        for(int i: arr){ //for printing array
+            sum = sum + i;
+            System.out.println(i);
+
+        }
+        return sum;
+    }
+    public static void noOfEventOddInArray(int[] arr){
+        for(int i: arr){ //for printing array
+            //sum = sum + i;
+            if(i%2==0){
+                    System.out.print(i);
+                    System.out.println(" : EVEN");
+            }else{
+                    System.out.print(i);
+                    System.out.println(" : Odd");
+            }
+            
+ 
+        }
+        
+    }
+    public static void maxAndMinElementArray(int[] arr){
+            int min =arr[0];
+            int max= arr[0];
+            for(int i : arr){
+                
+                if(i<=min){
+                    min=i;
+                }
+                if(i>=min){
+                    max=i;
+                }
+            }
+            System.out.println("Min is ->"+ min);
+            System.out.println("Max is ->"+ max);
+    }
     
 }
